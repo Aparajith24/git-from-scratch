@@ -17,6 +17,8 @@ func main() {
 		err = hashObjectCmd(os.Args[2:])
 	case "cat-file":
 		err = catFileCmd(os.Args[2:])
+	case "write-tree":
+		err = writeTreeCmd(os.Args[2:])
 	default:
 		err = fmt.Errorf("unknown command %q", os.Args[1])
 	}

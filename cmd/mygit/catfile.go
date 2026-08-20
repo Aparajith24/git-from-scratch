@@ -37,6 +37,15 @@ func catFileCmd(args []string) error {
 		return nil
 	}
 
+	if objType == "tree" { //pretty-print trees like real git does, not raw binary
+		tree, err := objects.ParseTree(data)
+		if err != nil {
+			return err
+		}
+		fmt.Print(tree.Pretty())
+		return nil
+	}
+
 	os.Stdout.Write(data) //else show the content
 	return nil
 }
