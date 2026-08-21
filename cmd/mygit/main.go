@@ -19,6 +19,8 @@ func main() {
 		err = catFileCmd(os.Args[2:])
 	case "write-tree":
 		err = writeTreeCmd(os.Args[2:])
+	case "commit-tree":
+		err = commitTreeCmd(os.Args[2:])
 	default:
 		err = fmt.Errorf("unknown command %q", os.Args[1])
 	}
