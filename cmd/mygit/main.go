@@ -21,6 +21,12 @@ func main() {
 		err = writeTreeCmd(os.Args[2:])
 	case "commit-tree":
 		err = commitTreeCmd(os.Args[2:])
+	case "update-ref":
+		err = updateRefCmd(os.Args[2:])
+	case "log":
+		err = logCmd(os.Args[2:])
+	case "commit":
+		err = commitCmd(os.Args[2:])
 	default:
 		err = fmt.Errorf("unknown command %q", os.Args[1])
 	}
